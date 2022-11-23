@@ -13,6 +13,10 @@ import java.time.LocalDate;
 @ToString
 public class DepartmentQuery {
 
-    private LocalDate searchDate;
+    private LocalDate searchDate = LocalDate.now();
+
+    public boolean isToday() {
+        return LocalDate.now().isEqual(this.searchDate);
+    }
 
 }

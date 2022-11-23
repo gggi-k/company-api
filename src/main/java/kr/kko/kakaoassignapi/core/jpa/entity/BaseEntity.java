@@ -45,4 +45,10 @@ public class BaseEntity {
     @Comment("갱신자")
     @Column(name = "UPDATED_BY")
     private String updatedBy;
+
+    @Builder.Default
+    @ColumnDefault("'Y'")
+    @Comment("활성여부")
+    @Column(name = "ENABLED", nullable = false)
+    private boolean enabled = true;
 }

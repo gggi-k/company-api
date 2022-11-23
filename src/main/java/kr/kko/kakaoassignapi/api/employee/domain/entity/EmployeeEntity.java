@@ -1,6 +1,7 @@
 package kr.kko.kakaoassignapi.api.employee.domain.entity;
 
 import kr.kko.kakaoassignapi.api.department.domain.entity.DepartmentEntity;
+import kr.kko.kakaoassignapi.core.jpa.entity.BaseEntity;
 import lombok.*;
 import org.hibernate.annotations.Comment;
 
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 @ToString
 @Entity
 @Table(name = "EMPLOYEE")
-public class EmployeeEntity {
+public class EmployeeEntity extends BaseEntity {
 
     @Id
     @Comment("직원아이디")

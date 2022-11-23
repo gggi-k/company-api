@@ -1,10 +1,12 @@
 package kr.kko.kakaoassignapi.api.department.domain.entity;
 
+import kr.kko.kakaoassignapi.api.department.domain.vo.DepartmentHistoryId;
 import kr.kko.kakaoassignapi.core.jpa.entity.BaseEntity;
 import lombok.*;
 import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
+
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -12,16 +14,11 @@ import javax.persistence.*;
 @Getter
 @ToString
 @Entity
-@Table(name = "DEPARTMENT")
-public class DepartmentEntity extends BaseEntity {
+@Table(name = "DEPARTMENT_HISTORY")
+public class DepartmentHistoryEntity extends BaseEntity {
 
-    public static final long ROOT_DEPARTMENT_ID = 0;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Comment("부서아이디")
-    @Column(name = "DEPARTMENT_ID")
-    private Long departmentId;
+    @EmbeddedId
+    private DepartmentHistoryId departmentHistoryId;
 
     @Comment("부서명")
     @Column(name = "DEPARTMENT_NAME", nullable = false)
