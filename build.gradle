@@ -19,6 +19,7 @@ repositories {
 }
 
 ext {
+    jwtVersion = "9.24.3"
     mapStructVersion = "1.5.3.Final"
     lombokMapStructVersion = "0.2.0"
 }
@@ -32,6 +33,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation "org.mapstruct:mapstruct:${mapStructVersion}"
+    implementation "com.nimbusds:nimbus-jose-jwt:${jwtVersion}"
 
 
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapStructVersion}"

@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +17,7 @@ public class CorporationResponse {
 
     @Mapper
     public interface Mappers {
-        CorporationResponse$MappersImpl FACTORY = new CorporationResponse$MappersImpl();
+        CorporationResponse.Mappers INSTANCE = org.mapstruct.factory.Mappers.getMapper(CorporationResponse.Mappers.class);
         CorporationResponse fromEntity(CorporationEntity corporationEntity);
     }
 
@@ -24,7 +25,7 @@ public class CorporationResponse {
     private final String corporationName;
 
     public static CorporationResponse fromEntity(CorporationEntity corporationEntity) {
-        return Mappers.FACTORY.fromEntity(corporationEntity);
+        return Mappers.INSTANCE.fromEntity(corporationEntity);
     }
 
     public static List<CorporationResponse> fromEntities(List<CorporationEntity> corporationEntities) {

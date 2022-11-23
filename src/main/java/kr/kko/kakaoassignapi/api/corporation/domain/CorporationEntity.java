@@ -8,14 +8,13 @@ import javax.persistence.*;
 
 @FieldNameConstants
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
 @Getter
 @ToString
 @Entity
 @Table(name = "CORPORATION", uniqueConstraints = @UniqueConstraint(columnNames = "CORPORATION_NAME"))
 public class CorporationEntity {
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Comment("법인아이디")
     @Column(name = "CORPORATION_ID")
