@@ -19,6 +19,8 @@ public class EmployeeRequest {
 
     @NotBlank
     private String employeeId;
+
+    @NotBlank
     private String password;
 
     private Long departmentId;
@@ -26,10 +28,8 @@ public class EmployeeRequest {
     @NotBlank
     private String name;
 
-    @NotNull
     private LocalDate birthDay;
 
-    @NotNull
     private LocalDate joinDate;
 
     private Long corporationId;

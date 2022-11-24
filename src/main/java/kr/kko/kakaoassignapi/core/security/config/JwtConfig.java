@@ -53,8 +53,7 @@ public class JwtConfig {
         jwtProcessor.setJWSTypeVerifier(new DefaultJOSEObjectTypeVerifier<>(JOSEObjectType.JWT));
         jwtProcessor.setJWTClaimsSetVerifier(new DefaultJWTClaimsVerifier<>(
                 new JWTClaimsSet.Builder().build(),
-                Set.of(JWTClaimNames.EXPIRATION_TIME, JWTClaimNames.ISSUED_AT, JWTClaimNames.SUBJECT, JWTClaimNames.JWT_ID, JWTClaimNames.NOT_BEFORE,
-                        UserPrincipal.Fields.name)));
+                Set.of(JWTClaimNames.EXPIRATION_TIME, JWTClaimNames.ISSUED_AT, JWTClaimNames.SUBJECT, JWTClaimNames.JWT_ID, JWTClaimNames.NOT_BEFORE)));
         return jwtProcessor;
     }
 }
