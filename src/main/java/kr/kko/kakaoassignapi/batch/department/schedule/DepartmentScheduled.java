@@ -1,4 +1,4 @@
-package kr.kko.kakaoassignapi.batch.department;
+package kr.kko.kakaoassignapi.batch.department.schedule;
 
 import kr.kko.kakaoassignapi.api.department.repository.DepartmentEmployeeHistoryRepository;
 import kr.kko.kakaoassignapi.api.department.repository.DepartmentEmployeeRepository;

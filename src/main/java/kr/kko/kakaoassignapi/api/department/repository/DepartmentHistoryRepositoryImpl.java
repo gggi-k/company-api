@@ -11,10 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static kr.kko.kakaoassignapi.api.department.domain.entity.QDepartmentEmployeeHistoryEntity.departmentEmployeeHistoryEntity;
@@ -55,7 +52,7 @@ public class DepartmentHistoryRepositoryImpl implements NoPagingForTreeRepositor
                 .where(containsEmployeeName(query.getSearchEmployeeName()),
                         departmentHistoryEntity.departmentHistoryId.historyDate.eq(query.getSearchDate()),
                         employeeEntity.retireDate.isNull()
-                                .or(employeeEntity.retireDate.isNotNull().and(employeeEntity.retireDate.before(LocalDate.now()))))
+                                .or(employeeEntity.retireDate.isNotNull().and(employeeEntity.retireDate.after(LocalDate.now()))))
                 .fetch();
 
         list.addAll(employees);
@@ -75,7 +72,6 @@ public class DepartmentHistoryRepositoryImpl implements NoPagingForTreeRepositor
 
         if(query.existSearchEmployeeName()) {
             Map<Long, List<DepartmentOrEmployeeResponse>> map = departments.stream().collect(Collectors.groupingBy(DepartmentOrEmployeeResponse::getDepartmentId));
-            list.addAll(employees);
             list.addAll(recursiveDepartment(employees, map));
         } else {
             list.addAll(departments);
@@ -90,10 +86,10 @@ public class DepartmentHistoryRepositoryImpl implements NoPagingForTreeRepositor
         return employeeEntity.name.containsIgnoreCase(employeeName);
     }
 
-    private List<DepartmentOrEmployeeResponse> recursiveDepartment(List<DepartmentOrEmployeeResponse> contain, Map<Long, List<DepartmentOrEmployeeResponse>> map) {
-        if(contain.isEmpty()) return Collections.emptyList();
+    private Set<DepartmentOrEmployeeResponse> recursiveDepartment(List<DepartmentOrEmployeeResponse> contain, Map<Long, List<DepartmentOrEmployeeResponse>> map) {
+        if(contain.isEmpty()) return Collections.emptySet();
 
-        final List<DepartmentOrEmployeeResponse> parent = new ArrayList<>();
+        final Set<DepartmentOrEmployeeResponse> parent = new HashSet<>();
         for (DepartmentOrEmployeeResponse response : contain) {
             final Long upperDepartmentId = response.getUpperDepartmentId();
             if(upperDepartmentId == null || !map.containsKey(upperDepartmentId)) continue;

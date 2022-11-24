@@ -31,4 +31,6 @@ public class EmployeeRequest {
 
     @NotNull
     private LocalDate joinDate;
+
+    private Long corporationId;
 }

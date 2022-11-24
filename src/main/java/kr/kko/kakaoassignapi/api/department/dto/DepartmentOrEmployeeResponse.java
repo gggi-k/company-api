@@ -1,12 +1,14 @@
 package kr.kko.kakaoassignapi.api.department.dto;
 
 import kr.kko.kakaoassignapi.api.department.domain.code.PositionCode;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.FieldNameConstants;
 
 import java.time.LocalDate;
 
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @FieldNameConstants
 @Getter
 @ToString
@@ -39,6 +41,7 @@ public class DepartmentOrEmployeeResponse {
         return this.isEmployee ? this.employeeName : this.departmentName;
     }
 
+    @EqualsAndHashCode.Include
     public String getKey() {
         StringBuilder sb = new StringBuilder("department-")
                 .append(this.departmentId);

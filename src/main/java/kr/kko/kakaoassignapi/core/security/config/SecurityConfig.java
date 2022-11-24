@@ -63,6 +63,7 @@ public class SecurityConfig {
                 .addFilterAfter(bearerJwtTokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .addFilterAt(usernamePasswordAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
+                    .antMatchers("/api/**").authenticated()
                     .anyRequest().permitAll()
                     .and()
                 .exceptionHandling()
