@@ -4,7 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
+import org.springframework.util.StringUtils;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import java.time.LocalDate;
 
 @Accessors(chain = true)
@@ -13,10 +16,13 @@ import java.time.LocalDate;
 @ToString
 public class DepartmentQuery {
 
-    private LocalDate searchDate = LocalDate.now();
+    private Long corporationId;
+    @Past
+    private LocalDate searchDate;
+    private String searchEmployeeName;
+    private boolean isHistory;
 
-    public boolean isToday() {
-        return LocalDate.now().isEqual(this.searchDate);
+    public boolean existSearchEmployeeName() {
+        return StringUtils.hasText(this.searchEmployeeName);
     }
-
 }

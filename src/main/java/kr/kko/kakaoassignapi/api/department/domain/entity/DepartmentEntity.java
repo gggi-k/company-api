@@ -2,13 +2,14 @@ package kr.kko.kakaoassignapi.api.department.domain.entity;
 
 import kr.kko.kakaoassignapi.core.jpa.entity.BaseEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
+@SuperBuilder
 @Getter
 @ToString
 @Entity

@@ -22,6 +22,7 @@ ext {
     jwtVersion = "9.24.3"
     mapStructVersion = "1.5.3.Final"
     lombokMapStructVersion = "0.2.0"
+    queryDslVersion = "5.0.0"
 }
 
 dependencies {
@@ -35,6 +36,11 @@ dependencies {
     implementation "org.mapstruct:mapstruct:${mapStructVersion}"
     implementation "com.nimbusds:nimbus-jose-jwt:${jwtVersion}"
 
+    implementation "com.querydsl:querydsl-core:${queryDslVersion}"
+    implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
+    annotationProcessor "com.querydsl:querydsl-apt:${queryDslVersion}:jpa"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
 
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapStructVersion}"
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'

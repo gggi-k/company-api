@@ -3,6 +3,7 @@ package kr.kko.kakaoassignapi.api.department.domain.entity;
 import kr.kko.kakaoassignapi.api.department.domain.vo.DepartmentHistoryId;
 import kr.kko.kakaoassignapi.core.jpa.entity.BaseEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
@@ -10,12 +11,12 @@ import javax.persistence.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
+@SuperBuilder
 @Getter
 @ToString
 @Entity
 @Table(name = "DEPARTMENT_HISTORY")
-public class DepartmentHistoryEntity extends BaseEntity {
+public class DepartmentHistoryEntity {
 
     @EmbeddedId
     private DepartmentHistoryId departmentHistoryId;

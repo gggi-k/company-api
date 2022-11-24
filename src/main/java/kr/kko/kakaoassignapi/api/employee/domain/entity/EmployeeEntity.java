@@ -3,6 +3,7 @@ package kr.kko.kakaoassignapi.api.employee.domain.entity;
 import kr.kko.kakaoassignapi.api.department.domain.entity.DepartmentEntity;
 import kr.kko.kakaoassignapi.core.jpa.entity.BaseEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
+@SuperBuilder
 @Getter
 @ToString
 @Entity
@@ -26,6 +27,10 @@ public class EmployeeEntity extends BaseEntity {
     @Comment("패스워드")
     @Column(name = "PASSWORD", nullable = false)
     private String password;
+
+    @Comment("사번")
+    @Column(name = "EMPLOYEE_NUMBER")
+    private String employeeNumber;
 
     @Comment("이름")
     @Column(name = "NAME", nullable = false)

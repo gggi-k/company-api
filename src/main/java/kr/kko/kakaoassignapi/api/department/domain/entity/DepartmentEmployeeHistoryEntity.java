@@ -1,8 +1,8 @@
-package kr.kko.kakaoassignapi.api.employee.domain.entity;
+package kr.kko.kakaoassignapi.api.department.domain.entity;
 
 import kr.kko.kakaoassignapi.api.department.domain.code.PositionCode;
-import kr.kko.kakaoassignapi.api.employee.domain.vo.EmployeeDepartmentId;
-import kr.kko.kakaoassignapi.core.jpa.entity.BaseEntity;
+import kr.kko.kakaoassignapi.api.department.domain.vo.DepartmentEmployeeHistoryId;
+import kr.kko.kakaoassignapi.api.department.domain.vo.DepartmentEmployeeId;
 import lombok.*;
 import org.hibernate.annotations.Comment;
 
@@ -14,11 +14,11 @@ import javax.persistence.*;
 @Getter
 @ToString
 @Entity
-@Table(name = "EMPLOYEE_DEPARTMENT_HISTORY")
-public class EmployeeDepartmentHistoryEntity {
+@Table(name = "DEPARTMENT_EMPLOYEE_HISTORY")
+public class DepartmentEmployeeHistoryEntity {
 
     @EmbeddedId
-    private EmployeeDepartmentId employeeDepartmentId;
+    private DepartmentEmployeeHistoryId departmentEmployeeHistoryId;
 
     @Enumerated(EnumType.STRING)
     @Comment("직책코드")
