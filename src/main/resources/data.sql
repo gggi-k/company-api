@@ -102,8 +102,8 @@ VALUES
 
 INSERT INTO EMPLOYEE (EMPLOYEE_ID, PASSWORD, NAME, BIRTH_DAY, EMPLOYEE_NUMBER, CREATED_BY, RETIRE_DATE)
 VALUES
-('jd', '$2a$10$jVJyaeF.IA4uJ7dzET0llunYkT7GuOFxMMxC2a.LGNn9Y2CoZYDEq', '죠르디', '2000-10-10', 'KD234', 'NONE', NULL),
-('jdd', '$2a$10$oEFaYdKdy1uLtWe4msadfO/m79YZVRBcmCFkGGUkin05nQiJsuQIi', '죠르디 아버지', '2001-10-10', 'AS435', 'NONE', NULL),
-('jdm', '$2a$10$TJocLCiPKcG4p2fF3/BBtOEksPHT7ieUjhLGIzbFEpOtZUqGPGCOK', '죠르디 어머니', '2002-10-10', 'FD544', 'NONE', NULL),
+('jd', '$2a$10$jVJyaeF.IA4uJ7dzET0llunYkT7GuOFxMMxC2a.LGNn9Y2CoZYDEq', 'ㅇㅇ', '2000-10-10', 'KD234', 'NONE', NULL),
+('jdd', '$2a$10$oEFaYdKdy1uLtWe4msadfO/m79YZVRBcmCFkGGUkin05nQiJsuQIi', 'ㄹㅇ 아버지', '2001-10-10', 'AS435', 'NONE', NULL),
+('jdm', '$2a$10$TJocLCiPKcG4p2fF3/BBtOEksPHT7ieUjhLGIzbFEpOtZUqGPGCOK', 'ㄴㅇ 어머니', '2002-10-10', 'FD544', 'NONE', NULL),
 ('retire1', '$2a$10$TJocLCiPKcG4p2fF3/BBtOEksPHT7ieUjhLGIzbFEpOtZUqGPGCOK', '퇴사직원1', '2000-10-10', 'FD544', 'NONE', '2022-11-24'),
 ('retire2', '$2a$10$TJocLCiPKcG4p2fF3/BBtOEksPHT7ieUjhLGIzbFEpOtZUqGPGCOK', '퇴사직원2', '2000-10-10', 'FD544', 'NONE', '2022-11-25');
