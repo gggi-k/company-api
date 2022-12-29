@@ -1,4 +1,4 @@
-# kakao-assign-api
+# company-api
 
 
 ## Skill
